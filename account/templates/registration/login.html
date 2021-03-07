@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}Log-in{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>Log-in</h1>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again. </p>
+    {% else %}
+        <p>Please, use the following form to log-in:</p>
+    {% endif %}
+
+    
+        <form action="{% url 'login' %}" method="post">
+            <div class="form-group">
+            {% render_field form.username class="form-control" placeholder="user name" type="text" %}
+            </div>
+            <div class="form-group">
+            {% render_field form.password class="form-control" placeholder="password" type="password"%} 
+            </div>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            <div>
+            <input type="submit" value="Log-in" class="btn btn-primary">
+            </div>
+        </form>
+    
+</div>
+{% endblock %}

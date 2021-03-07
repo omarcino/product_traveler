@@ -3,8 +3,12 @@
 {% block header %}
 <div class="container">
 <div class="row">
-    <div class="col text-left">Welcome: {user_name}</div>
-    <div class="col text-right">{log in} | {log out}</div>
+    {% if request.user.is_authenticated %}
+        <div class="col text-left">User: {{ request.user.first_name }}</div>
+        <div class="col text-right"> <a href="{% url "logout" %}">Logout</a></div>
+    {% else %}
+        <div class="col text-right"><a href="{% url "login" %}">Log-in</a></div>
+    {% endif %}
 </div>
 </div>
 {% endblock %}

@@ -31,13 +31,15 @@ ALLOWED_HOSTS = ['192.168.1.11', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'live',
+    'account.apps.AccountConfig',
+    'live.apps.LiveConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# LOGIN AUTHENTICATION
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
