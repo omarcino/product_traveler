@@ -14,7 +14,7 @@ class StatusAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'description')
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'status')
+    list_display = ('name', 'status')
 
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'level', 'item_code', 'item_cod_desc')
@@ -23,7 +23,7 @@ class Prof_Loc_Admin(admin.ModelAdmin):
     list_display = ('id', 'profile_id', 'location_id', 'step')
 
 class Location_User_Admin(admin.ModelAdmin):
-     list_display = ('id', 'location_id', 'user_id')
+     list_display = ('location_id', 'user_id')
 
 
 ##### Register your models here.
