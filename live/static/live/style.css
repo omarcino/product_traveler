@@ -1,0 +1,88 @@
+  .orders-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.orders-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  font-family: 'Karla', sans-serif;
+  text-align: left;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px 15px;
+}
+
+.orders-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  font-family: 'Spectral', serif;
+}
+
+.orders-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.orders-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.orders-table tbody tr.note-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.row-orders, .row-qty {
+  width: 5%;
+}
+
+.row-customers, .row-exp-date {
+  width: 7%;
+}
+
+.row-item-code {
+  width: 10%;
+}
+
+.row-item-code-desc {
+  width: 18%;
+}
+
+.row-progress {
+  width: 15%;
+}
+
+.highlighted {
+  background-color: #FFFF00;
+  font-weight: bold;
+}
+
+.progress {
+  height: 25px;
+}
+
+@media (max-width: 1200px) {
+  .extra-large-screen {
+      display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .large-screen {
+      display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .medium-screen {
+      display: none;
+  }
+}

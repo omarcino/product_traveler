@@ -1,9 +1,56 @@
-{% extends "live/header.html" %}
+{% extends "live/layout.html" %}
 
 {% block title %}live{% endblock %}
 
 {%block body %}
-<div class="container">
- <h1>AbstractUser</h1>
+<div class="ml-4 mr-4">
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th class="row-orders">Order</th>
+                <th class="row-customers">Customer</th>
+                <th class="row-item-code medium-screen">Item Code</th>
+                <th class="row-item-code-desc large-screen">Item Code Desc</th>
+                <th class="row-exp-date">Exp. Date</th>
+                <th class="row-qty">Qty</th>
+                <th class="row-comments extra-large-screen">Comments</th>
+                <th class="row-progress">Progress</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in ps %}
+            <tr>
+                <td>{{ p.sales_order_no}}</td>
+                <td>{{ p.customer_name}}</td>
+                <td class=" medium-screen">{{ p.item_code}}</td>
+                <td class="large-screen">{{ p.item_cod_desc}}</td>
+                <td>{{ p.exp_date_f|date:"M d"}}</td>
+                <td>{{ p.qty }}</td>
+                <td class="extra-large-screen">
+                {% if p.notes %}
+                   <span class="highlighted"> {{ p.notes }} </span></br>
+                {% endif %}
+                    {{ p.comments }}
+                </td>
+                <td>
+                <div class="progress">
+                {% if p.prgr > 0 and p.prgr <= 30 %}
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">{{ p.status }}</div>
+                {% elif p.prgr > 30 and p.prgr <= 60 %}
+                <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">{{ p.status }}</div>
+                {% elif p.prgr > 60 and p.prgr <= 90 %}
+                <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">{{ p.status }}</div>
+                {% elif p.prgr > 90 %}
+                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ p.status }}</div>
+                {% else %}
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                {% endif %}
+                </div>
+                </td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

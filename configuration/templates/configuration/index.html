@@ -1,0 +1,14 @@
+{% extends "configuration/header.html" %}
+
+{% block title %}Configuration{% endblock %}
+
+{%block body %}
+<div class="container mt-3">
+    <h2>Upload CSV file</h2>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit" class="btn btn-primary">Load CSV file</button>
+    </form>
+</div>
+{% endblock %}
