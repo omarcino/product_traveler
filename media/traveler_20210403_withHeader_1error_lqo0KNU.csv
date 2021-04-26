@@ -1,2 +1,0 @@
-SO_line,CustomerNo,SalesOrderNo,CustomerName,LineKey,ItemCode,ItemCodeDesc,SO Header,PROM DATE,UDF_MATERIALS_CLEAR_DATE,EXP DATE,Exp DATE,Qty,QuantityShipped, UnitPrice ,Production Notes,QtyOnHand,RMANumber,DropShip,Comments
-0016630_000002,L3COLOR,16630,L3Harris Space & Intelligence,2,194500001555-00,"L3 Harris Colorado MBK1U, i7-7",6/22/2021,6/22/2021,6/14/2021,,,5,0,3600,"263500001522-00, 26-004846-525 DP WA 3/29 (SOH 6/22/2021)",0,,0,
